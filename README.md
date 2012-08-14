@@ -11,10 +11,10 @@ Yegappan Lakshmanan
 modified by
 Alvaro Muhlethaler
  
-script type
-utility
- 
+script type utility
+
 description
+
 Overview 
 
 The grep plugin integrates the grep, fgrep, egrep, and agrep tools with 
@@ -35,203 +35,192 @@ Usage
 The grep.vim plugin introduces the following Vim commands: 
 
 :Grep          - Search for the specified pattern in the specified files 
+
 :GrepAdd       - Same as ":Grep" but adds the results to the current
 results 
+
 :Rgrep         - Run recursive grep 
-:RgrepAdd      - Same as ":Rgrep" but adds the results to the current
-results 
+
+:RgrepAdd      - Same as ":Rgrep" but adds the results to the current results 
+
 :GrepBuffer    - Search for a pattern on all open buffers 
-:GrepBufferAdd - Same as ":GrepBuffer" but adds the results to the
-current 
-                 results 
+
+:GrepBufferAdd - Same as ":GrepBuffer" but adds the results to the current results 
+
 :Bgrep         - Same as :GrepBuffer 
+
 :BgrepAdd      - Same as :GrepBufferAdd 
-:GrepArgs      - Search for a pattern on all the Vim argument 
-                 filenames (:args) 
-:GrepArgsAdd   - Same as ":GrepArgs" but adds the results to the current 
-                 results 
+
+:GrepArgs      - Search for a pattern on all the Vim argument filenames (:args) 
+
+:GrepArgsAdd   - Same as ":GrepArgs" but adds the results to the current results 
+
 :Fgrep         - Run fgrep 
-:FgrepAdd      - Same as ":Fgrep" but adds the results to the current 
-                 results 
+
+:FgrepAdd      - Same as ":Fgrep" but adds the results to the current results 
+
 :Rfgrep        - Run recursive fgrep 
-:RfgrepAdd     - Same as ":Rfgrep" but adds the results to the current 
-                 results 
+
+:RfgrepAdd     - Same as ":Rfgrep" but adds the results to the current results 
+
 :Egrep         - Run egrep 
-:EgrepAdd      - Same as ":Egrep" but adds the results to the current 
-                 results 
+
+:EgrepAdd      - Same as ":Egrep" but adds the results to the current results 
+
 :Regrep        - Run recursive egrep 
-:RegrepAdd     - Same as ":Regrep" but adds the results to the current 
-                 results 
+
+:RegrepAdd     - Same as ":Regrep" but adds the results to the current results 
+
 :Agrep         - Run agrep 
-:AgrepAdd      - Same as ":Agrep" but adds the results to the current 
-                 results 
+
+:AgrepAdd      - Same as ":Agrep" but adds the results to the current results 
+
 :Ragrep        - Run recursive agrep 
-:RagrepAdd     - Same as ":Ragrep" but adds the results to the current 
-                 results 
+
+:RagrepAdd     - Same as ":Ragrep" but adds the results to the current results 
 
 The above commands can be invoked like this: 
 
    :Grep   [<grep_options>] [<search_pattern> [<file_name(s)>]] 
+   
    :Rgrep  [<grep_options>] [<search_pattern> [<file_name(s)>]] 
+   
    :Fgrep  [<grep_options>] [<search_pattern> [<file_name(s)>]] 
+   
    :Rfgrep [<grep_options>] [<search_pattern> [<file_name(s)>]] 
+   
    :Egrep  [<grep_options>] [<search_pattern> [<file_name(s)>]] 
+   
    :Regrep [<grep_options>] [<search_pattern> [<file_name(s)>]] 
+   
    :Agrep  [<grep_options>] [<search_pattern> [<file_name(s)>]] 
+   
    :Ragrep [<grep_options>] [<search_pattern> [<file_name(s)>]] 
-
+   
+   
    :GrepAdd   [<grep_options>] [<search_pattern> [<file_name(s)>]] 
+   
    :RgrepAdd  [<grep_options>] [<search_pattern> [<file_name(s)>]] 
+   
    :FgrepAdd  [<grep_options>] [<search_pattern> [<file_name(s)>]] 
+   
    :RfgrepAdd [<grep_options>] [<search_pattern> [<file_name(s)>]] 
+   
    :EgrepAdd  [<grep_options>] [<search_pattern> [<file_name(s)>]] 
+   
    :RegrepAdd [<grep_options>] [<search_pattern> [<file_name(s)>]] 
+   
    :AgrepAdd  [<grep_options>] [<search_pattern> [<file_name(s)>]] 
+   
    :RagrepAdd [<grep_options>] [<search_pattern> [<file_name(s)>]] 
+   
 
    :GrepBuffer [<grep_options>] [<search_pattern>] 
+   
    :Bgrep [<grep_options>] [<search_pattern>] 
+   
    :GrepArgs [<grep_options>] [<search_pattern>] 
 
    :GrepBufferAdd [<grep_options>] [<search_pattern>] 
+   
    :BgrepAdd [<grep_options>] [<search_pattern>] 
+   
    :GrepArgsAdd [<grep_options>] [<search_pattern>] 
+   
 
 In the above commands, all the arguments are optional. 
 
-You can specify grep options like -i (ignore case) or -w (search for a
-word) 
-to the above commands.  If the <grep_options> are not specified, then
-the 
-default grep options specified by the variable Grep_Default_Options is 
+You can specify grep options like -i (ignore case) or -w (search for a word) to the above commands.  
+If the <grep_options> are not specified, then the default grep options specified by the variable Grep_Default_Options is 
 used. 
 
-You can specify the grep pattern to search as an argument to the above 
-commands.  If the <search_pattern> is not specified, then you will be 
-prompted to enter a search pattern. By default, the keyword under the
-cursor 
-is displayed for the search pattern prompt. You can accept the default
-or 
-modify it. 
+You can specify the grep pattern to search as an argument to the above commands.
+If the <search_pattern> is not specified, then you will be prompted to enter a search pattern. By default, the keyword under the
+cursor is displayed for the search pattern prompt. You can accept the default or modify it. 
 
-The search pattern is automatically enclosed by the character specified
-in 
-the Grep_Shell_Quote_Char variable. You should not enclose the search 
+The search pattern is automatically enclosed by the character specified in the Grep_Shell_Quote_Char variable. You should not enclose the search 
 pattern with a shell escape character. 
 
-If you want to specify a search pattern with space characters or a 
-multi-word pattern, then you should use the Grep command pattern input 
+If you want to specify a search pattern with space characters or a multi-word pattern, then you should use the Grep command pattern input 
 prompt to supply the pattern. 
 
-You can specify one or more file names (or file patterns) to the above 
-commands.  If the <file_names> are not specified, then you will be
-prompted 
-to enter file names.  By default, the pattern specified by the 
-Grep_Default_Filelist variable is used. To specify the file name(s) as
-an 
-argument to the above commands, you have to specify the search pattern
-also. 
+You can specify one or more file names (or file patterns) to the above commands.  If the <file_names> are not specified, then you will be
+prompted to enter file names.  By default, the pattern specified by the Grep_Default_Filelist variable is used. To specify the file name(s) as
+an argument to the above commands, you have to specify the search pattern also. 
 
-When you enter only the command name, you will be prompted to enter the 
-search pattern and the files in which to search for the pattern. By
-default, 
-the keyword under the cursor is displayed for the search pattern prompt. 
-Depending on the command, you may prompted for additional parameters
-like 
-the directories to search for the pattern. 
+When you enter only the command name, you will be prompted to enter the search pattern and the files in which to search for the pattern. By
+default, the keyword under the cursor is displayed for the search pattern prompt. 
+Depending on the command, you may prompted for additional parameters like the directories to search for the pattern. 
 
-You can retrieve previously entered values for the Grep prompts using
-the up 
-and down arrow keys. You can cancel the command by pressing the escape
+You can retrieve previously entered values for the Grep prompts using the up and down arrow keys. You can cancel the command by pressing the escape
 key. 
-You can use CTRL-U to erase the default shown for the prompt and CTRL-W
-to 
-erase the previous word in the prompt. For more information about
-editing 
-the prompt, read ':help cmdline-editing' Vim help topic. 
+You can use CTRL-U to erase the default shown for the prompt and CTRL-W to erase the previous word in the prompt. 
+For more information about editing the prompt, read ':help cmdline-editing' Vim help topic. 
 
-After invoking any of the grep commands, you can cancel the command,
-when 
-you are prompted for a search pattern or file names or a directory by 
-pressing the <Esc> key. You cannot cancel (or kill) the 
-grep/fgrep/egrep/agrep commands after the external command is invoked. 
+After invoking any of the grep commands, you can cancel the command, when you are prompted for a search pattern or file names or a directory by 
+pressing the <Esc> key. You cannot cancel (or kill) the grep/fgrep/egrep/agrep commands after the external command is invoked. 
 
-The GrepAdd, RgrepAdd and other *Add commands append the search output
-to 
-the current search output. This is useful if you want to see the search 
-results for multiple patterns at the same time. These commands are
-available 
-only in Vim version 7.0 and above. 
+The GrepAdd, RgrepAdd and other *Add commands append the search output to the current search output. This is useful if you want to see the search 
+results for multiple patterns at the same time. These commands are available only in Vim version 7.0 and above. 
 
-You can map a key to invoke any of the above commands. For example, the 
-following map invokes the :Grep command to search for the keyword under
-the 
-cursor: 
+You can map a key to invoke any of the above commands. For example, the following map invokes the :Grep command to search for the keyword under
+the cursor: 
+
 
       nnoremap <silent> <F3> :Grep<CR> 
 
+
 The output of the grep command will be listed in the Vim quickfix
 window. 
-1. You can select a line in the quickfix window and press <Enter> or
-   double 
-   click on a match to jump to that line. 
-2. You can use the ":cnext" and ":cprev" commands to the jump to the
-   next or 
-   previous output line. 
-3. You can use the ":colder" and ":cnewer" commands to go between
-   multiple 
-   grep quickfix output windows. 
+
+1. You can select a line in the quickfix window and press <Enter> or double click on a match to jump to that line. 
+
+2. You can use the ":cnext" and ":cprev" commands to the jump to the next or previous output line. 
+3. You can use the ":colder" and ":cnewer" commands to go between multiple grep quickfix output windows. 
 4. The quickfix window need not be opened always to use the grep output. 
-   You can close the quickfix window and use the quickfix commands to
-jump 
-   to the grep matches.  Use the ":copen" command to open the quickfix 
+   You can close the quickfix window and use the quickfix commands to jump to the grep matches.  Use the ":copen" command to open the quickfix 
    window again. 
+
 
 For more information about other quickfix commands read ":help quickfix" 
 
-When using GUI Vim, the Tools->Search menu item with a few sub-menu
-items is 
-created for few variations of the search command. 
+When using GUI Vim, the Tools->Search menu item with a few sub-menu items is created for few variations of the search command. 
 
 Configuration 
 
-By changing the following variables you can configure the behavior of
-this 
-plugin. Set the following variables in your .vimrc file using the 'let' 
-command. 
+By changing the following variables you can configure the behavior of this plugin. 
+Set the following variables in your .vimrc file using the 'let' command. 
 
-The 'Grep_Path' variable is used to locate the grep utility. By default, 
-this is set to grep. You can change this using the let command: 
+The 'Grep_Path' variable is used to locate the grep utility. By default, this is set to grep. 
+You can change this using the let command: 
 
       :let Grep_Path = 'd:\tools\grep.exe' 
 
-The 'Fgrep_Path' variable is used to locate the fgrep utility. By
-default, 
-this is set to fgrep. You can change this using the let command: 
+
+The 'Fgrep_Path' variable is used to locate the fgrep utility. 
+By default, this is set to fgrep. You can change this using the let command: 
 
       :let Fgrep_Path = 'd:\tools\fgrep.exe' 
 
-The 'Egrep_Path' variable is used to locate the egrep utility. By
-default, 
-this is set to egrep. You can change this using the let command: 
+
+The 'Egrep_Path' variable is used to locate the egrep utility. 
+By default, this is set to egrep. You can change this using the let command: 
 
       :let Egrep_Path = 'd:\tools\egrep.exe' 
 
-The 'Agrep_Path' variable is used to locate the agrep utility. By
-default, 
-this is set to agrep. You can change this using the let command: 
+The 'Agrep_Path' variable is used to locate the agrep utility. 
+By default, this is set to agrep. You can change this using the let command: 
 
       :let Agrep_Path = 'd:\tools\agrep.exe' 
 
-The 'Grep_Find_Path' variable is used to locate the find utility. By 
-default, this is set to d:\tools\find.exe. You can change this using the
-let 
-command: 
+The 'Grep_Find_Path' variable is used to locate the find utility. 
+By default, this is set to d:\tools\find.exe. You can change this using the
+let command: 
 
       :let Grep_Find_Path = 'd:\tools\find.exe' 
 
-The 'Grep_Xargs_Path' variable is used to locate the xargs utility. By 
-default, this is set to xargs. You can change this using the let 
+The 'Grep_Xargs_Path' variable is used to locate the xargs utility. 
+By default, this is set to xargs. You can change this using the let 
 command: 
 
       :let Grep_Xargs_Path = 'd:\tools\xargs.exe' 
@@ -246,11 +235,8 @@ by spaces. You can change this settings using the let command:
       :let Grep_Default_Filelist = '*.[chS]' 
       :let Grep_Default_Filelist = '*.c *.cpp *.asm' 
 
-The 'Grep_Default_Options' is used to pass default command line options
-to 
-the grep/fgrep/egrep/agrep utilities. By default, this is set to an
-empty 
-string. You can change this using the let command: 
+The 'Grep_Default_Options' is used to pass default command line options to the grep/fgrep/egrep/agrep utilities. By default, this is set to an
+empty string. You can change this using the let command: 
 
       :let Grep_Default_Options = '-i' 
 
