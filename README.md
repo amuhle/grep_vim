@@ -319,22 +319,21 @@ an empty string.  You can change this using the let command:
       :let Grep_Shell_Escape_Char = "'" 
  
 install details
-1. Copy the grep.vim file to the $HOME/.vim/plugin or
-   $HOME/vimfiles/plugin 
-   or $VIM/vimfiles/plugin directory. 
-   Refer to the following Vim help topics for more information about Vim 
-   plugins: 
+
+1. Copy the grep.vim file to the $HOME/.vim/plugin or $HOME/vimfiles/plugins or $VIM/vimfiles/plugin directory. 
+
+   Refer to the following Vim help topics for more information about Vim plugins: 
+      
       :help add-plugin 
+      
       :help add-global-plugin 
+      
       :help runtimepath 
-2. If the grep executables are not already present in one of the
-   directories 
-   in the PATH environment variable, then set the Grep_Path and other
-_Path 
-   variables to point to the location of the grep utilites in the .vimrc 
-   file. 
+      
+2. If the grep executables are not already present in one of the directories in the PATH environment variable, then set the Grep_Path and other
+_Path variables to point to the location of the grep utilites in the .vimrc file. 
+
 3. Restart Vim. 
-4. You can now use the ":Grep" and other commands to search for patterns
-   in 
-   files. 
+
+4. You can now use the ":Grep" and other commands to search for patterns in files. 
  
