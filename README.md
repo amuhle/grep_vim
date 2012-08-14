@@ -273,14 +273,11 @@ recursive searches:
 
       :let Grep_Find_Use_Xargs = 0 
 
-To handle file names with space characters in them, the xargs utility 
-is invoked with the '--null' argument. If the xargs utility in your
-system 
-doesn't accept the '--null' argument, then you can change the 
-Grep_Xargs_Options variable. For example, to use the '--print0' xargs 
-argument, you can use the following command: 
+To handle file names with space characters in them, the xargs utility is invoked with the '-0' argument. 
+If the xargs utility in your system doesn't accept the '-0' argument, then you can change the Grep_Xargs_Options variable.
+For example, to use the '--print0' xargs argument, you can use the following command: 
 
-:let Grep_Xargs_Options = '--print0' 
+      :let Grep_Xargs_Options = '--print0' 
 
 The Grep_Cygwin_Find variable should be set to 1, if you are using the
 find 
@@ -300,21 +297,14 @@ command:
 
       :let Grep_Null_Device = '/dev/null' 
 
-The 'Grep_Shell_Quote_Char' variable specifies the quote character to
-use 
-for protecting patterns from being interpreted by the shell. For Unix 
-systems, this is set to "'" and for MS-Window systems, this is set to an 
-empty string.  You can change this using the let command: 
+The 'Grep_Shell_Quote_Char' variable specifies the quote character to use for protecting patterns from being interpreted by the shell. For Unix 
+systems, this is set to "'" and for MS-Window systems, this is set to an empty string.  You can change this using the let command: 
 
       :let Grep_Shell_Quote_Char = "'" 
 
-The 'Grep_Shell_Escape_Char' variable specifies the escape character to
-use 
-for protecting special characters from being interpreted by the shell.
-For 
-Unix systems, this is set to '' and for MS-Window systems, this is set
-to 
-an empty string.  You can change this using the let command: 
+The 'Grep_Shell_Escape_Char' variable specifies the escape character to use for protecting special characters from being interpreted by the shell.
+For Unix systems, this is set to '' and for MS-Window systems, this is set to an empty string.
+You can change this using the let command: 
 
       :let Grep_Shell_Escape_Char = "'" 
  
